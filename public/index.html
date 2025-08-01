@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Subscribe</h1>
+    <input type="email" id="email" placeholder="Enter your email" required>
+    <button id="submit">Submit</button>
+    <p id="status"></p>
+
+    <script>
+        const emailInput = document.getElementById('email');
+        const submitBtn = document.getElementById('submit');
+
+        submitBtn.addEventListener('click', async () => {
+            const email = emailInput.value;
+            const res = await fetch('/subscribe', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email })
+            });
+        });
+    </script>
+</body>
+</html>
