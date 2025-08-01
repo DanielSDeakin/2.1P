@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>
+        give me your email
+    </h1>
+    <form>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required"><br>
+        <input type="button" id="button" value="Submit">
+    </form>
+
+    <p id="message"></p>
+</body>
+</html>
+<script>
+    const inputEmail = document.getElementById('email');
+    const button = document.getElementById('button');
+    const complete = document.getElementById('message');
+    button.addEventListener('click', async function () {
+        const email = inputEmail.value;
+        message.textContent = email;
+    });
+</script>
